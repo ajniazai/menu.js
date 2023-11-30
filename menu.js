@@ -74,12 +74,12 @@ class Menu {
         `);
     }
 
-    displayFood() {
-        let foodString = '';
-        for (let i = 0; i < this.food.length; i++) {
-            foodString += i  + ') ' + this.food[i].name + '\n';
+    displayTeam() {
+        let teamString = '';
+        for (let i = 0; i < this.team.length; i++) {
+            teamString += i  + ') ' + this.team[i].name + '\n';
         }
-        alert(foodString);
+        alert(teamString);
     
     }
     creatMenu() {
@@ -105,6 +105,27 @@ class Menu {
                     case '2':
                         this.deleteMenu();
                 }
+            }
+        }
+
+        deleteTeam() {
+            let index = prompt('Enter the index of the team that you wish to delete: ');
+            if (index > -1 && index < this.teams.length) {
+            this.teams.splice(index,1);
+            }
+            }
+
+        createMenu() {
+                    let name = prompt('Enter name for new menu: ');
+                    let position = prompt('Enter position for new menu: ');
+                    
+                    this.selectedMenu.addMenu(new Menu(name,position));
+                    }
+                
+
+        deleteMenu() {
+                        let index = prompt('Enter the index of the Menu that you wish to delete: ');
+                        if (index > -1 && index < this.selectedTeam.menu.length) { this.selectedTeam.menu.splice(index,1);
             }
         }
     }
